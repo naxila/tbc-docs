@@ -714,6 +714,74 @@ npm start</code></pre>
             }
           },
           {
+            "title": "Добавить Samsung",
+            "onClick": {
+              "action": "Store",
+              "key": "cart",
+              "value": {
+                "function": "JoinToString",
+                "values": [
+                  {
+                    "function": "ReadStorage",
+                    "key": "cart",
+                    "fallbackValue": ""
+                  },
+                  "Samsung Galaxy S24 - 70,000 руб\n"
+                ]
+              }
+            }
+          },
+          {
+            "title": "⬅️ Назад",
+            "onClick": {
+              "action": "Back"
+            }
+          }
+        ]
+      }
+    },
+    "Laptops": {
+      "onNavigation": {
+        "action": "SendMessage",
+        "text": "💻 Ноутбуки:\n1. MacBook Pro M3 - 150,000 руб\n2. Dell XPS 13 - 120,000 руб\n3. Lenovo ThinkPad - 90,000 руб",
+        "inlineActions": [
+          {
+            "title": "Добавить MacBook",
+            "onClick": {
+              "action": "Store",
+              "key": "cart",
+              "value": {
+                "function": "JoinToString",
+                "values": [
+                  {
+                    "function": "ReadStorage",
+                    "key": "cart",
+                    "fallbackValue": ""
+                  },
+                  "MacBook Pro M3 - 150,000 руб\n"
+                ]
+              }
+            }
+          },
+          {
+            "title": "Добавить Dell",
+            "onClick": {
+              "action": "Store",
+              "key": "cart",
+              "value": {
+                "function": "JoinToString",
+                "values": [
+                  {
+                    "function": "ReadStorage",
+                    "key": "cart",
+                    "fallbackValue": ""
+                  },
+                  "Dell XPS 13 - 120,000 руб\n"
+                ]
+              }
+            }
+          },
+          {
             "title": "⬅️ Назад",
             "onClick": {
               "action": "Back"
@@ -728,21 +796,29 @@ npm start</code></pre>
         "text": {
           "function": "JoinToString",
           "values": [
-            "🛍️ Ваша корзина:\n",
+            "🛍️ Ваша корзина:\n\n",
             {
               "function": "ReadStorage",
               "key": "cart",
               "fallbackValue": "Корзина пуста"
-            }
+            },
+            "\n\n💡 Используйте кнопки ниже для управления корзиной"
           ]
         },
         "inlineActions": [
           {
-            "title": "Очистить корзину",
+            "title": "🗑️ Очистить корзину",
             "onClick": {
               "action": "Store",
               "key": "cart",
               "value": ""
+            }
+          },
+          {
+            "title": "🔄 Обновить",
+            "onClick": {
+              "action": "Navigate",
+              "menuItem": "Cart"
             }
           },
           {
