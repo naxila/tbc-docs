@@ -16,6 +16,13 @@ function initNavigation() {
     // Обработка кликов по навигации
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Если это ссылка на отдельную страницу - не предотвращаем переход
+            if (href && !href.startsWith('#')) {
+                return; // Позволяем браузеру обработать переход
+            }
+            
             e.preventDefault();
             
             // Удаляем активный класс со всех ссылок
@@ -25,7 +32,7 @@ function initNavigation() {
             this.classList.add('active');
             
             // Прокручиваем к секции
-            const targetId = this.getAttribute('href').substring(1);
+            const targetId = href.substring(1);
             const targetSection = document.getElementById(targetId);
             
             if (targetSection) {

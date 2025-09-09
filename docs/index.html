@@ -24,9 +24,6 @@
                         <a href="#overview" class="nav-link active">📋 Обзор</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#quick-start" class="nav-link">🚀 Быстрый старт</a>
-                    </li>
-                    <li class="nav-item">
                         <a href="#scenarios" class="nav-link">📝 Сценарии</a>
                     </li>
                     <li class="nav-item">
@@ -118,65 +115,6 @@
                     </ul>
                 </section>
 
-                <!-- Быстрый старт -->
-                <section id="quick-start" class="section">
-                    <h2>🚀 Быстрый старт</h2>
-                    
-                    <h3>Установка</h3>
-                    <pre><code class="language-bash"># Клонирование репозитория
-git clone https://github.com/your-username/telegram-bot-constructor.git
-cd telegram-bot-constructor
-
-# Установка зависимостей
-npm install
-
-# Настройка окружения
-cp .env.example .env
-# Отредактируйте .env файл</code></pre>
-
-                    <h3>Настройка окружения</h3>
-                    <p>Создайте файл <code>.env</code> в корне проекта:</p>
-                    <pre><code class="language-env">TELEGRAM_BOT_TOKEN=your_bot_token_here
-API_BASE_URL=https://api.example.com
-SCENARIO_PATH=scenarios/main-bot.json
-NODE_ENV=development</code></pre>
-
-                    <h3>Запуск</h3>
-                    <pre><code class="language-bash"># Режим разработки с автоперезагрузкой
-npm run dev:watch
-
-# Сборка и запуск в продакшене
-npm run build
-npm start</code></pre>
-
-                    <h3>Первый бот</h3>
-                    <p>Создайте файл <code>scenarios/hello-bot.json</code>:</p>
-                    <pre><code class="language-json">{
-  "onStartActions": [
-    {
-      "action": "Navigate",
-      "menuItem": "Main"
-    }
-  ],
-  "menuItems": {
-    "Main": {
-      "onNavigation": {
-        "action": "SendMessage",
-        "text": "👋 Привет! Добро пожаловать в бота!",
-        "inlineActions": [
-          {
-            "title": "ℹ️ Информация",
-            "onClick": {
-              "action": "SendMessage",
-              "text": "Это простой пример бота на Telegram Bot Constructor"
-            }
-          }
-        ]
-      }
-    }
-  }
-}</code></pre>
-                </section>
 
 
                 <!-- Сценарии -->
